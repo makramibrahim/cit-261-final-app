@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<title>Mobile App | CIT 261</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="app.css">
+<script type="text/javascript" src="app.js"></script>
+
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("images/homePage.jpg");
+    min-height: 90%;
+}
+</style>
+<body>
+
+<!--================== Navbar sit on top ===================-->
+<div class="top hide-small">
+  <div class="bar xlarge black opacity hover-opacity-off" id="myNavbar">
+    <a href="#home" class="bar-item button">HOME</a>
+    <a href="#menu" class="bar-item button">MENU</a>
+    <a href="#about" class="bar-item button">ABOUT</a>
+    <a href="#googleMap" class="bar-item button">CONTACT</a>
+  </div>
+</div>
+  
+<!-- Header with image -->
+<header class="bgimg display-container grayscale-min" id="home">
+  <div class="display-bottomleft padding">
+    <span class="tag large">Open from 10am to 12pm</span>
+  </div>
+  <div class="display-middle center">
+      <span class="text-white hide-small" style="font-size:70px"><b>Thin<br>CRUST ITALIAN PIZZA</b></span>
+    <span class="text-white hide-large hide-medium" style="font-size:50px"><b>Thin<br>CRUST PIZZA</b></span>
+    <p><a href="#menu" class="button black">Let me see the menu</a></p>
+    </div>
+</header>
+
+<!--======================= Menu Container ==========================-->
+     
+     <div class="container padding-64 xxlarge" id="menu">
+     <div class="content black padding">
+  
+    <h1 class="center" style="margin-bottom:64px">THE MENU</h1>
+    <div class="row center border border-dark-grey">
+      <a href="javascript:void(0)" onclick="menu(event, 'Pizza');" id="myLink">
+        <div class="col s4 tablink padding-large hover-red">Pizza</div>
+      </a>
+      <a href="javascript:void(0)" onclick="menu(event, 'Pasta');">
+        <div class="col s4 tablink padding-large hover-red">Pasta</div>
+      </a>
+        <a href="javascript:void(0)" onclick="menu(event, 'Antipasto');">
+        <div class="col s4 tablink padding-large hover-red">Antipasto</div>
+      </a>
+    </div>
+
+  <!--===================== Menu Price ===========================-->
+    <!--  <form action="app.php" method="post">-->
+
+      <div id="Pizza" class="container menu padding-32 white">
+      <h1><b>Margherita</b> 
+      <span class="right tag dark-grey round">$12.50<div class="product medium-4 columns" name="Margherita"> 
+      <input oninput="cartTotal()" id="12.50" value="0" size="2"/></div></span></h1>
+      <p class="text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
+      <hr>
+      
+      <h1><b>Formaggio</b> <span class="right tag dark-grey round">$15.50
+        <div class="product medium-4 columns" name="Formaggio">
+        <input oninput="cartTotal()" id="15.50" value="0" size="2"/></div></span></h1>
+      <p class="text-grey">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
+      <hr>
+      
+      <h1><b>Chicken</b> <span class="right tag dark-grey round">$17.50
+      <div class="product medium-4 columns" name="Chicken">
+     <input oninput="cartTotal()" id="17.50" value="0" size="2"/></div></span>
+     </h1>
+      <p class="text-grey">Fresh tomatoes, mozzarella, chicken, onions</p>
+      <hr>
+
+      <h1><b>Pineapple</b> <span class="right tag dark-grey round">$16.50
+      <div class="product medium-4 columns" name="Pineapple">
+      <input oninput="cartTotal()" id="16.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
+      <hr>
+
+      <h1><b>Meat Town</b> <span class="tag red round">Hot!</span><span class="right tag dark-grey round">$20.00<div class="product medium-4 columns" name="MeatTown">
+     <input oninput="cartTotal()" id="20.00" value="0" size="2"/></div></span>
+     </h1>
+      <p class="text-grey">Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken</p>
+      <hr>
+
+      <h1><b>Parma</b> <span class="tag grey round">New</span><span class="right tag dark-grey round">$21.50 <div class="product medium-4 columns" name=">Parma">
+     <input oninput="cartTotal()" id="21.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
+    </div>
+
+    <div id="Pasta" class="container menu padding-32 white">
+      <h1><b>Lasagnia</b> <span class="tag grey round">Popular</span> <span class="right tag dark-grey round">$13.50 <div class="product medium-4 columns" name="Lasagnia">
+       <input oninput="cartTotal()" id="13.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Special sauce, mozzarella, parmesan, ground beef</p>
+      <hr>
+   
+      <h1><b>Ravioli</b> <span class="right tag dark-grey round">$14.50 <div class="product medium-4 columns" name="Ravioli" data-id="0"> <input oninput="cartTotal()" id="14.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Ravioli filled with cheese</p>
+      <hr>
+      
+      <h1><b>Spaghetti Classica</b> <span class="right tag dark-grey round">$11.00 <div class="product medium-4 columns" name="Spaghetti">
+      <input oninput="cartTotal()" id="11.00" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Fresh tomatoes, onions, ground beef</p>
+      <hr>
+
+      <h1><b>Seafood pasta</b> <span class="right tag dark-grey round">$25.50 
+      <div class="product medium-4 columns" name="SeafoodPasta">
+      <input oninput="cartTotal()" id="25.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Salmon, shrimp, lobster, garlic</p>
+    </div>
+
+
+     <div id="Antipasto" class="container menu padding-32 white">
+      <h1><b>Today's Soup</b> <span class="tag grey round">Seasonal</span>
+      <span class="right tag dark-grey round">$5.50 <div class="product medium-4 columns" name="Soup">
+       <input oninput="cartTotal()" id="5.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Ask the waiter</p>
+      <hr>
+   
+      <h1><b>Bruschetta</b> <span class="right tag dark-grey round">$8.50 <div class="product medium-4 columns" name="Bruschetta" data-id="0">
+      <input oninput="cartTotal()" id="8.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Bread with pesto, tomatoes, onion, garlic</p>
+      <hr>
+      
+      <h1><b>Garlic bread</b> <span class="right tag dark-grey round">$9.50<div class="product medium-4 columns" name="GarlicBread">
+      <input oninput="cartTotal()" id="9.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Grilled ciabatta, garlic butter, onions</p>
+      <hr>
+      
+      <h1><b>Tomozzarella</b> <span class="right tag dark-grey round">$10.50 <div class="product medium-4 columns" name="Tomozzarella">
+       <input oninput="cartTotal()" id="10.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Tomatoes and mozzarella</p>
+    </div>
+    <!--</form>-->
+     </div>
+     </div>  
+      <!--==================Cart Class ===================-->
+       <div class="container center padding-64 black xxlarge col tablink hover ">
+       <div class="content light-green padding">
+       <h1 style="color:white">Your Order Here:</h1>
+       <h2 id="totalItems" style="color:white">Total Items: 0</h2>
+       <h2 id="totalDue" style="color:white">Amount Due: $0.00</h2>
+      <button href="javascript:void(0)" onclick="menu(event, 'Checkout');">Pay Now</button>
+      <button type="button" onclick="clearCart()">Clear Total</button>
+    
+    <!-- <form action="app.php" method="post">-->
+    <!--============ Checkout Container ===========-->
+    <div id="Checkout" class="container center menu padding-64 xlarge">
+       <!--presonal information-->
+     <div class="personalInfo">
+         <h4 style="color:red"><b>*All fields are required</b></h4>
+    <input onkeyup="validateFirstName(this.value, 'firstName')"
+           placeholder="Frist Name" id="fName" name="fName"/>
+    <span class="firstName" style="color:red"><b>*</b></span><br>
+         
+    <input onkeyup="validateLastName(this.value, 'lastName')"
+           placeholder= "Last Name" id="lName" name="lName"/>
+    <span class="lastName" style="color:red">*</span><br>
+         
+    <input onkeyup="validatePhoneNumber(this.value, 'phoneNumber')"
+           placeholder= "Phone Number" id="phoneNumber" name="phoneNumber"/>
+    <span class="phoneNumber" style="color:red"><b>*</b></span><br>
+         
+    <input type="email" onInput="validateEmail(this.value, 'email')" placeholder="Email" id="email" name="email"/>
+    <span class="email" style="color:red"><b>*</b></span><br>
+             
+    <input onInput="validateStreet(this.value, 'street')" 
+     placeholder= "Street Address" id="stAddress" name="stAddress"/>
+    <span class="street" style="color:red"><b>*</b></span><br>
+         
+    <input onInput="validateCity(this.value, 'city')" 
+     placeholder= "City" id="city" name="city"/>
+    <span class="city" style="color:red">*</span><br>
+         
+    <input onInput="validateStates(this.value, 'states')" 
+     placeholder= "State Abbreviation" id="state" name="state"/>
+    <span class="states" style="color:red"><b>*</b></span><br>
+         
+    <input onkeyup="validateZip(this.value, 'zip')" placeholder="Zip Code" id="zip" name="zip"/>
+    <span class="zip" style="color:red"><b>*</b></span><br>
+         
+    </div>  
+      <div class="creditCard">
+        
+     <select name="cardtype" id="cardtype">
+        <option value="Visa">Visa</option>
+        <option value="Master">Master</option>
+        <option value="Discove">Discove</option>
+        <option value="American">American</option>
+    </select><br>
+        
+    <input onInput="validateCreditCard(this.value, 'num')" 
+     placeholder= "0000 0000 0000 0000" id="visaCard" name="visaCard"/>
+     <span class="num" style="color:red"><b>*</b></span><br>
+
+     
+      <span onInput="validateDate(this.value, 'exDate')">
+      <input placeholder= "MM"   id="month" name="month" size="3" class="exDate" />
+      <input placeholder= "YYYY" id="year" name="year" size="5" class="exDate" />
+     </span><br>
+
+    <input name="myBtn" type="submit" value="Submit Order" onclick="ajaxPost();">
+    <input type="reset"  value ="Cancel Order"/> <br><br><br>
+   
+     <div id="status" style="text-align: left; font-size: 16px"></div>
+    </div>
+    </div>
+    </div>
+        <!--============ GoogleMap Container ===========-->
+    <div class="container padding-64 black xlarge" id="googleMap">
+    <div class="content grey padding-64">
+    
+         <div class="center padding xlarge">     
+           <h1>Italiano's Pizzaria </h1>
+            <h3>20 Main Street</h3>
+      <h3> Paris Idaho, 83261</h3>
+         </div> 
+  
+      <table class="googleMap" align="center" border="solid">
+     <tr>
+    <td>
+      <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+
+      <div class="googleMap">
+        <div id='gmap_canvas' style='height:440px;width:700px;'></div><div><small><a href="http://embedgooglemaps.com">embed google maps</a></small></div><div><small><a href="http://ironlinkdirectory.com/">high PR link directory</a></small>
+      </div>
+      <script type='text/javascript'>
+        function init_map() {
+                    var myOptions = {
+                        zoom:17,center:new google.maps.LatLng(42.2267644,-111.40100560000002),mapTypeId: google.maps.MapTypeId.ROADMAP};
+          map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+          marker = new google.maps.Marker({map: map,
+          position: new google.maps.LatLng(42.2267644,-111.40100560000002)});
+          infowindow = new google.maps.InfoWindow({
+             content:'<strong>Italiano\'s Pizzaria</strong><br>20 Main Street Paris Idaho<br>'});
+             google.maps.event.addListener(marker, 'click', 
+             function(){infowindow.open(map,marker);});
+                 infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+      </script>
+            </div>
+      </tr>
+      </table><br><br>
+    </div>
+    </div>
+    
+    <!--===============About Container =====================-->
+    <div class="container padding-64 xlarge black " id="about">
+    <div class="content light-blue  padding">
+    <h1 class="center" style="margin-bottom:64px">About</h1>
+    <p>The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p><b>The Chef?</b> Mr. Italiano himself 
+    <img src="images/delucia-PizzaMaking.jpg" style="width:150px; margin-bottom:10px" class="circle right" alt="Chef"></p>
+    <p>We are proud of our interiors.</p>
+    <img src="images/italian-pizza-kitchen.jpg" style="width:100%" alt="Restaurant">
+    <h2>Opening Hours</h2>
+    <div class="row">
+      <div class="col s6">
+        <p>Sun & Mon CLOSED</p>
+        <p>Tuesday 10.00 am - 11:00 pm</p>
+        <p>Wednseday 10.00 am - 11:00 pm</p>
+        <p>Thursday 10:00 am - 11:00 pm</p>
+      </div>
+      <div class="col s6">
+        <p>Friday 10:00 am - 12:00 pm</p>
+        <p>Saturday 10:00 am - 2:00 pm</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="center black padding-32 xlarge">
+<a href="#home" class="bar-item button">HOME</a>
+ 2017 &copy; CIT 261 Mobile Application
+</footer>
+</body>
+</html>
